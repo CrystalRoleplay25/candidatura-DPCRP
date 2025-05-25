@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatura Oficial - DPCRP</title>
+    <style>
+        :root {
+            --police-blue: #1a237e;
+            --police-red: #d32f2f;
+            --light-gray: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: var(--police-blue);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--police-red);
+        }
+        
+        .badge {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        h1 {
+            color: var(--police-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            border-bottom: 2px solid var(--police-red);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--police-blue);
+            font-size: 20px;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .required:after {
+            content: " *";
+            color: var(--police-red);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--police-blue);
+            outline: none;
+            box-shadow: 0 0 5px rgba(26, 35, 126, 0.2);
+        }
+        
+        .radio-group, .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .radio-option, .checkbox-option {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input, .checkbox-option input {
+            margin-right: 10px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-col {
+            flex: 1;
+        }
+        
+        .btn-submit {
+            background-color: var(--police-blue);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #0d1533;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .declaration {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-left: 4px solid var(--police-blue);
+            margin: 25px 0;
+        }
+        
+        .error {
+            color: var(--police-red);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://iili.io/Hg0h0Ux.png" alt="Emblema DPCRP" class="badge">
+        <h1>DEPARTAMENTO DE POLÍCIA DO CRYSTAL ROLEPLAY</h1>
+        <p>Formulário Oficial de Candidatura</p>
+    </header>
+
+    <div class="form-container">
+        <form id="applicationForm">
+            <h1>FORMULÁRIO DE CANDIDATURA</h1>
+            
+            <h2>Dados Pessoais</h2>
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="fullName" class="required">Nome Completo</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error" id="nameError">Por favor, insira seu nome completo</div>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="birthDate" class="required">Data de Nascimento</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                        <div class="error" id="birthError">Por favor, insira uma data válida</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="idNumber" class="required">Número de Identificação</label>
+                        <input type="text" id="idNumber" name="idNumber" required>
+                        <div class="error" id="idError">Por favor, insira um número válido</div>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="phone" class="required">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <div class="error" id="phoneError">Por favor, insira um telefone válido</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError">Por favor, insira um email válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address" class="required">Morada Completa</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+                <div class="error" id="addressError">Por favor, insira sua morada</div>
+            </div>
+            
+            <h2>Informações de Candidatura</h2>
+            
+            <div class="form-group">
+                <label class="required">Posição a que se candidata</label>
+                <select id="position" name="position" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="patrulheiro">Oficial Patrulheiro</option>
+                    <option value="transito">Agente de Trânsito</option>
+                    <option value="investigador">Detetive Investigador</option>
+                    <option value="swat">Operacional SWAT</option>
+                    <option value="comando">Oficial de Comando</option>
+                </select>
+                <div class="error" id="positionError">Por favor, selecione uma posição</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="required">Tem experiência prévia em forças policiais?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="expYes" name="experience" value="sim" required>
+                        <label for="expYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="expNo" name="experience" value="nao">
+                        <label for="expNo">Não</label>
+                    </div>
+                </div>
+                <div class="error" id="expError">Por favor, selecione uma opção</div>
+            </div>
+            
+            <div id="expDetails" style="display:none;">
+                <div class="form-group">
+                    <label for="expDescription">Descreva sua experiência anterior</label>
+                    <textarea id="expDescription" name="expDescription" rows="4"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="motivation" class="required">Motivação para ingressar no DPCRP</label>
+                <textarea id="motivation" name="motivation" rows="5" required></textarea>
+                <div class="error" id="motivationError">Por favor, explique sua motivação</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="required">Disponibilidade para treinamento intensivo?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="availYes" name="availability" value="sim" required>
+                        <label for="availYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="availNo" name="availability" value="nao">
+                        <label for="availNo">Não</label>
+                    </div>
+                </div>
+                <div class="error" id="availError">Por favor, selecione uma opção</div>
+            </div>
+            
+            <div class="declaration">
+                <h3>Declaração de Honra</h3>
+                <p>Eu, <strong><span id="declarationName"></span></strong>, declaro sob compromisso de honra que todas as informações fornecidas neste formulário são verdadeiras e completas. Compreendo que qualquer falsificação de informações pode resultar na desqualificação da minha candidatura ou em medidas disciplinares futuras.</p>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <label for="agreeTerms" class="required">Concordo com os termos acima</label>
+                    </div>
+                </div>
+                <div class="error" id="termsError">É necessário aceitar os termos</div>
+            </div>
+            
+            <button type="submit" class="btn-submit">SUBMETER CANDIDATURA</button>
+        </form>
+    </div>
+    
+    <footer class="footer">
+        <p>Departamento de Polícia do Crystal Roleplay &copy; 2023</p>
+        <p>Documento confidencial - Uso exclusivo do DPCRP</p>
+    </footer>
+
+    <script>
+        // Mostrar/ocultar campo de experiência
+        document.querySelectorAll('input[name="experience"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('expDetails').style.display = 
+                    this.value === 'sim' ? 'block' : 'none';
+            });
+        });
+        
+        // Preencher nome na declaração
+        document.getElementById('fullName').addEventListener('input', function() {
+            document.getElementById('declarationName').textContent = this.value;
+        });
+        
+        // Validação do formulário
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validar cada campo
+            const validateField = (fieldId, errorId) => {
+                const field = document.getElementById(fieldId);
+                const error = document.getElementById(errorId);
+                
+                if (!field.value.trim()) {
+                    error.style.display = 'block';
+                    field.style.borderColor = '#d32f2f';
+                    isValid = false;
+                } else {
+                    error.style.display = 'none';
+                    field.style.borderColor = '#ddd';
+                }
+            };
+            
+            // Validar campos obrigatórios
+            validateField('fullName', 'nameError');
+            validateField('birthDate', 'birthError');
+            validateField('idNumber', 'idError');
+            validateField('phone', 'phoneError');
+            validateField('email', 'emailError');
+            validateField('address', 'addressError');
+            validateField('position', 'positionError');
+            validateField('motivation', 'motivationError');
+            
+            // Validar radio buttons
+            if (!document.querySelector('input[name="experience"]:checked')) {
+                document.getElementById('expError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('expError').style.display = 'none';
+            }
+            
+            if (!document.querySelector('input[name="availability"]:checked')) {
+                document.getElementById('availError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('availError').style.display = 'none';
+            }
+            
+            // Validar checkbox
+            if (!document.getElementById('agreeTerms').checked) {
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('termsError').style.display = 'none';
+            }
+            
+            // Validar email
+            const email = document.getElementById('email').value;
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById('emailError').textContent = 'Por favor, insira um email válido';
+                document.getElementById('emailError').style.display = 'block';
+                document.getElementById('email').style.borderColor = '#d32f2f';
+                isValid = false;
+            }
+            
+            // Se tudo estiver válido, pode enviar
+            if (isValid) {
+                alert('Candidatura submetida com sucesso! Entraremos em contacto em breve.');
+                this.reset();
+                document.getElementById('expDetails').style.display = 'none';
+                document.getElementById('declarationName').textContent = '';
+            }
+        });
+        
+        // Proteção básica contra cópia
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('A cópia de conteúdo deste formulário não é permitida.');
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'x' || e.key === 'X')) {
+                e.preventDefault();
+                alert('A cópia de conteúdo deste formulário não é permitida.');
+            }
+        });
+    </script>
+</body>
+</html>
